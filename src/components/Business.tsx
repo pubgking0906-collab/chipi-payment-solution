@@ -3,15 +3,24 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Building2, FileCheck, Users, Shield } from "lucide-react";
+import { Building2, FileCheck, Users, Shield, Briefcase, TrendingUp } from "lucide-react";
 
 const capabilities = [
-  "Crypto-to-fiat payouts",
-  "Verified bank transfers",
-  "Licensed gaming support",
-  "Full compliance framework",
-  "Dedicated wallet addresses",
-  "Real-time monitoring",
+  "Crypto-to-fiat payouts & conversions",
+  "IBAN accounts with SEPA/SWIFT transfers",
+  "Multi-currency support (USD, EUR, CHF & more)",
+  "Managed investment certificates (Swiss ISIN)",
+  "Cold wallet storage & multi-sig security",
+  "Full KYC/KYB compliance framework",
+  "Dedicated account manager",
+  "Real-time transaction monitoring",
+];
+
+const clientTypes = [
+  { icon: Building2, title: "Web3 Companies", desc: "Crypto-native startups and platforms" },
+  { icon: Briefcase, title: "Institutions", desc: "Funds, family offices, and financial institutions" },
+  { icon: TrendingUp, title: "HNW Investors", desc: "High-net-worth individuals seeking premium service" },
+  { icon: Users, title: "Businesses", desc: "Companies needing crypto-fiat infrastructure" },
 ];
 
 export default function Business() {
@@ -29,12 +38,12 @@ export default function Business() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Built for Businesses
+              Built for Businesses & Institutions
             </h2>
             <p className="text-gray-400 mb-8">
-              CHIPI provides the infrastructure for merchants and operators to accept 
-              crypto payments with full regulatory compliance. Not a bank — a payment 
-              orchestration layer.
+              CHIPI provides complete crypto banking infrastructure — connecting digital assets 
+              with traditional finance through IBAN accounts, international transfers, 
+              and regulated investment products. Swiss-based, globally accessible.
             </p>
 
             <ul className="space-y-3 mb-8">
@@ -66,19 +75,14 @@ export default function Business() {
             </motion.button>
           </motion.div>
 
-          {/* Right: Cards */}
+          {/* Right: Client Types */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="grid grid-cols-2 gap-4"
           >
-            {[
-              { icon: Building2, title: "Licensed Partners", desc: "Fiat via regulated institutions" },
-              { icon: FileCheck, title: "KYC/KYB Ready", desc: "Built-in compliance" },
-              { icon: Users, title: "Approved Merchants", desc: "Controlled environment" },
-              { icon: Shield, title: "AML Compliant", desc: "Transaction monitoring" },
-            ].map((card, i) => (
+            {clientTypes.map((card, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -93,6 +97,28 @@ export default function Business() {
             ))}
           </motion.div>
         </div>
+
+        {/* Trust badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-16 pt-16 border-t border-white/10"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { value: "200+", label: "Countries Supported" },
+              { value: "Swiss", label: "Regulated Platform" },
+              { value: "24/7", label: "Account Management" },
+              { value: "€50M+", label: "Assets Under Management" },
+            ].map((stat, i) => (
+              <div key={i}>
+                <div className="text-2xl md:text-3xl font-bold gradient-text mb-1">{stat.value}</div>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
