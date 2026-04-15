@@ -1,125 +1,163 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { 
   CreditCard, 
-  Wallet, 
   ArrowRightLeft, 
+  Wallet, 
   Shield, 
   Globe,
-  Building,
+  Building2,
   TrendingUp,
-  Users,
   Lock,
-  Banknote,
-  PiggyBank,
-  BadgeCheck
+  Users,
+  Coins,
+  FileCheck,
+  Smartphone
 } from "lucide-react";
 
 const features = [
   {
     icon: CreditCard,
     title: "IBAN Accounts",
-    description: "Personal & business accounts with dedicated IBAN for seamless banking",
+    description: "Open multi-currency accounts with dedicated IBANs for seamless banking integration. Support for EUR, USD, GBP, CHF and more.",
+    color: "from-blue-500 to-cyan-500",
   },
   {
     icon: ArrowRightLeft,
-    title: "SEPA & SWIFT",
-    description: "International transfers to 200+ countries via SEPA and SWIFT networks",
+    title: "SEPA & SWIFT Transfers",
+    description: "Send and receive international payments through SEPA and SWIFT networks. Reach 200+ countries with competitive rates.",
+    color: "from-purple-500 to-pink-500",
   },
   {
     icon: Wallet,
-    title: "Crypto Wallet",
-    description: "Self-custody wallet with full control over your private keys",
+    title: "Crypto Wallets",
+    description: "Self-custody wallets with full control over private keys. Support for BTC, ETH, USDT, USDC and 100+ digital assets.",
+    color: "from-orange-500 to-red-500",
   },
   {
-    icon: Banknote,
-    title: "Crypto to Fiat",
-    description: "Instant conversion between crypto and traditional currencies",
-  },
-  {
-    icon: Building,
-    title: "Business Accounts",
-    description: "Dedicated accounts for companies, startups, and institutions",
+    icon: Coins,
+    title: "Crypto Exchange",
+    description: "Buy, sell, and swap cryptocurrencies with competitive rates. Real-time pricing with deep liquidity pools.",
+    color: "from-green-500 to-emerald-500",
   },
   {
     icon: TrendingUp,
     title: "Investment Products",
-    description: "Managed certificates with Swiss ISIN for professional investors",
+    description: "Managed certificates with Swiss ISIN. Access to professional-grade investment vehicles for qualified investors.",
+    color: "from-indigo-500 to-violet-500",
+  },
+  {
+    icon: Building2,
+    title: "Business Accounts",
+    description: "Dedicated accounts for companies and institutions. Multi-user access, approval workflows, and corporate features.",
+    color: "from-teal-500 to-cyan-500",
   },
   {
     icon: Users,
     title: "HNW Services",
-    description: "Premium support with dedicated account manager for high-net-worth clients",
+    description: "Premium services for high-net-worth clients. Dedicated account manager, priority support, and custom limits.",
+    color: "from-amber-500 to-orange-500",
+  },
+  {
+    icon: FileCheck,
+    title: "KYC/AML Compliance",
+    description: "Automated verification with leading providers. Sumsub, Onfido, and Chainalysis integration built-in.",
+    color: "from-rose-500 to-pink-500",
   },
   {
     icon: Lock,
-    title: "Multi-Sig Security",
-    description: "Cold wallet storage and multi-signature protection for your assets",
-  },
-  {
-    icon: Shield,
-    title: "Fully Compliant",
-    description: "Swiss-regulated with full KYC/AML compliance framework",
-  },
-  {
-    icon: Globe,
-    title: "Global Access",
-    description: "Operate worldwide with support for 200+ countries",
-  },
-  {
-    icon: PiggyBank,
-    title: "Asset Management",
-    description: "Professional portfolio management for funds and family offices",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Licensed Partners",
-    description: "Fiat operations through regulated financial institutions",
+    title: "Custody Solutions",
+    description: "Institutional-grade custody with Fireblocks and Bitgo. Multi-sig, MPC, and cold storage options.",
+    color: "from-slate-500 to-gray-600",
   },
 ];
 
 export default function Features() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} id="features" className="py-24 bg-white">
-      <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Complete Crypto Banking Platform
-          </h2>
-          <p className="text-[var(--muted)] max-w-2xl mx-auto">
-            Everything you need to bridge crypto and traditional finance — IBAN accounts, 
-            international transfers, investments, and premium services for businesses and HNW clients.
-          </p>
-        </motion.div>
+    <section ref={ref} id="features" className="py-24 md:py-32 bg-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-blue-50 to-transparent opacity-50" />
+      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-teal-50 to-transparent opacity-50" />
+      
+      <div className="container-custom relative z-10">
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-sm font-medium mb-4">
+              Platform Features
+            </span>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Everything You Need to
+            <br />
+            <span className="gradient-text">Bridge Crypto & Finance</span>
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xl text-[var(--muted)] leading-relaxed"
+          >
+            A complete suite of banking and crypto services designed for businesses,
+            institutions, and high-net-worth individuals.
+          </motion.p>
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group p-6 rounded-2xl bg-slate-50 hover:bg-gradient-to-br hover:from-[var(--primary)]/5 hover:to-[var(--secondary)]/5 transition-all duration-300 border border-transparent hover:border-[var(--primary)]/20"
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.05 }}
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <feature.icon className="text-white" size={22} />
+              <div className="group h-full p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-gray-200 transition-all duration-300">
+                {/* Icon */}
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                  <feature.icon className="text-white" size={26} />
+                </div>
+                
+                {/* Content */}
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-[var(--primary)] transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-[var(--muted)] leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-              <p className="text-[var(--muted)] text-sm">{feature.description}</p>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="text-center mt-16"
+        >
+          <a href="#" className="inline-flex items-center gap-2 text-[var(--primary)] font-medium hover:gap-3 transition-all">
+            View Full API Documentation
+            <ArrowRightLeft size={18} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
