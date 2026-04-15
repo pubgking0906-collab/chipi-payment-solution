@@ -12,7 +12,7 @@ export default function Hero() {
         backgroundSize: '40px 40px'
       }} />
 
-      <div className="container-custom relative z-10">
+      <div className="w-full max-w-[1400px] mx-auto px-8 md:px-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text */}
           <motion.div
@@ -25,7 +25,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4"
             >
               Pay with Fiat & Crypto.
             </motion.h1>
