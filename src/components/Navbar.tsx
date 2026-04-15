@@ -50,11 +50,8 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <button className="text-[var(--muted)] hover:text-[var(--foreground)] text-sm font-medium transition-colors">
-              Login
-            </button>
             <button className="btn-primary !py-2 !px-5 text-sm">
-              Sign up
+              Login / Sign up
             </button>
           </div>
 
@@ -86,14 +83,9 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <div className="flex gap-3 mt-2">
-              <button className="flex-1 py-2 border border-gray-300 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors">
-                Login
-              </button>
-              <button className="flex-1 btn-primary">
-                Sign up
-              </button>
-            </div>
+            <button className="btn-primary mt-2">
+              Login / Sign up
+            </button>
           </div>
         </motion.div>
       )}
