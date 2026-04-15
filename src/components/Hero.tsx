@@ -12,8 +12,8 @@ export default function Hero() {
         backgroundSize: '40px 40px'
       }} />
 
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+      <div className="container-custom relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -96,7 +96,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex justify-end"
+            className="relative flex justify-center lg:justify-end lg:pr-4"
           >
             {/* Phone frame */}
             <div className="relative">
