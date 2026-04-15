@@ -27,7 +27,7 @@ export default function Hero() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
             >
-              Pay with Crypto.
+              Pay with Fiat & Crypto.
               <br />
               <span className="gradient-text">Instantly.</span>
             </motion.h1>
