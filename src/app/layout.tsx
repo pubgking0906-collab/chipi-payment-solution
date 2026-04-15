@@ -9,8 +9,30 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "CHIPI | Crypto Payment Solutions",
-  description: "Pay with Crypto. Instantly. Just Scan. CHIPI enables seamless crypto payments through a simple QR-based experience.",
+  description: "CHIPI is a fintech platform, not a bank. Services via licensed partners.",
   keywords: ["crypto payments", "QR payments", "crypto to fiat", "digital payments", "blockchain payments"],
+  openGraph: {
+    title: "CHIPI | Pay with Fiat & Crypto. Instantly.",
+    description: "CHIPI is a fintech platform, not a bank. Services via licensed partners.",
+    url: "https://chipipay.co",
+    siteName: "CHIPI",
+    images: [
+      {
+        url: "https://chipipay.co/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CHIPI - Crypto Payment Solutions",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CHIPI | Pay with Fiat & Crypto. Instantly.",
+    description: "CHIPI is a fintech platform, not a bank. Services via licensed partners.",
+    images: ["https://chipipay.co/og-image.png"],
+  },
 };
 
 export default function RootLayout({

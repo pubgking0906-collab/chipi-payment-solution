@@ -1,0 +1,43 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066FF"/>
+      <stop offset="100%" style="stop-color:#00D4AA"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="1" fill="rgba(0,102,255,0.15)"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.5"/>
+  
+  <!-- Logo icon -->
+  <rect x="520" y="180" width="60" height="60" rx="12" fill="url(#brandGradient)"/>
+  <text x="550" y="225" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">C</text>
+  
+  <!-- CHIPI text -->
+  <text x="600" y="300" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">CHIPI</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="360" font-family="Arial, sans-serif" font-size="28" fill="#94a3b8" text-anchor="middle">Pay with Fiat &amp; Crypto.</text>
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="url(#brandGradient)" text-anchor="middle">Instantly.</text>
+  
+  <!-- Bottom tagline -->
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="18" fill="#64748b" text-anchor="middle">Scan. Pay. Done. QR-based crypto payments worldwide.</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="150" cy="150" r="80" fill="url(#brandGradient)" opacity="0.1"/>
+  <circle cx="1050" cy="480" r="100" fill="url(#brandGradient)" opacity="0.1"/>
+  <circle cx="200" cy="500" r="40" fill="url(#brandGradient)" opacity="0.08"/>
+  <circle cx="1000" cy="130" r="50" fill="url(#brandGradient)" opacity="0.08"/>
+</svg>
