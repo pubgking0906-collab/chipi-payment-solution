@@ -68,9 +68,8 @@ export default function Footer() {
           </div>
 
           {/* Bottom */}
-          <div className="mt-8 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--muted)]">
+          <div className="mt-8 pt-8 border-t border-gray-100 text-center text-xs text-[var(--muted)]">
             <span>© {new Date().getFullYear()} CHIPI. All rights reserved. Built by Joni</span>
-            <span>CHIPI is a fintech platform, not a bank. Services via licensed partners.</span>
           </div>
         </div>
       </div>
