@@ -1,11 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import TrustLine from "@/components/TrustLine";
-import Services from "@/components/Services";
+import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
-import Payouts from "@/components/Payouts";
-import Compliance from "@/components/Compliance";
-import About from "@/components/About";
+import Business from "@/components/Business";
+import Security from "@/components/Security";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -13,12 +11,10 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <TrustLine />
-      <Services />
+      <Features />
       <HowItWorks />
-      <Payouts />
-      <Compliance />
-      <About />
+      <Business />
+      <Security />
       <Footer />
     </main>
   );

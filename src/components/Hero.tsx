@@ -1,78 +1,58 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { QrCode, Zap, Shield, ArrowRight } from "lucide-react";
+import { QrCode, Zap, Shield, CheckCircle } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden grid-bg">
-      {/* Background blobs */}
-      <div className="blob w-[600px] h-[600px] bg-[var(--primary)] top-0 right-0 opacity-20" />
-      <div className="blob w-[400px] h-[400px] bg-[var(--secondary)] bottom-20 left-0 opacity-20" />
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 opacity-30" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,102,255,0.15) 1px, transparent 0)`,
+        backgroundSize: '40px 40px'
+      }} />
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Text Content */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Text */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center lg:text-left"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="trust-badge mb-6"
-            >
-              <Shield size={16} />
-              <span>Regulated & Compliant</span>
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
             >
               Pay with Crypto.
               <br />
               <span className="gradient-text">Instantly.</span>
-              <br />
-              Just Scan.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-lg md:text-xl text-[var(--muted)] mb-8 max-w-xl"
+              transition={{ delay: 0.2 }}
+              className="text-lg text-[var(--muted)] mb-8 max-w-md mx-auto lg:mx-0"
             >
-              CHIPI enables seamless crypto payments through a simple QR-based
-              experience. Users scan a QR code at approved merchants and
-              complete transactions instantly using their crypto wallet.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45 }}
-              className="text-base font-medium text-[var(--foreground)] mb-8"
-            >
-              No cards. No delays. No complexity.
+              Scan. Pay. Done. QR-based crypto payments at approved merchants worldwide.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="flex flex-wrap gap-4"
+              transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <motion.button
-                className="btn-primary flex items-center gap-2"
-                whileHover={{ scale: 1.02, x: 5 }}
+                className="btn-primary"
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Get Started <ArrowRight size={20} />
+                Get Started
               </motion.button>
               <motion.button
                 className="btn-secondary"
@@ -83,81 +63,102 @@ export default function Hero() {
               </motion.button>
             </motion.div>
 
-            {/* Stats */}
+            {/* Trust indicators */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-[var(--border)]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="flex items-center gap-6 mt-10 justify-center lg:justify-start text-sm text-[var(--muted)]"
             >
-              {[
-                { value: "Instant", label: "Transactions" },
-                { value: "Global", label: "Coverage" },
-                { value: "100%", label: "Compliant" },
-              ].map((stat, i) => (
-                <div key={i}>
-                  <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-                  <div className="text-sm text-[var(--muted)]">{stat.label}</div>
-                </div>
-              ))}
+              <span className="flex items-center gap-2">
+                <CheckCircle size={16} className="text-green-500" />
+                Regulated
+              </span>
+              <span className="flex items-center gap-2">
+                <CheckCircle size={16} className="text-green-500" />
+                Licensed Partners
+              </span>
+              <span className="flex items-center gap-2">
+                <CheckCircle size={16} className="text-green-500" />
+                Instant
+              </span>
             </motion.div>
           </motion.div>
 
-          {/* Right: QR Animation */}
+          {/* Right: Phone Mockup */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex items-center justify-center"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative flex justify-center"
           >
+            {/* Phone frame */}
             <div className="relative">
-              {/* Main QR Container */}
               <motion.div
-                className="w-72 h-72 md:w-96 md:h-96 rounded-3xl bg-white shadow-2xl flex items-center justify-center qr-pulse"
-                animate={{
-                  boxShadow: [
-                    "0 0 0 0 rgba(0, 102, 255, 0.4)",
-                    "0 0 0 30px rgba(0, 102, 255, 0)",
-                  ],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+                className="w-[280px] md:w-[320px] bg-white rounded-[40px] shadow-2xl p-3 border border-gray-200"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="w-48 h-48 md:w-64 md:h-64 bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] rounded-2xl flex items-center justify-center">
-                  <QrCode size={120} className="text-white md:w-40 md:h-40" />
+                {/* Phone screen */}
+                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[32px] p-6 min-h-[500px] md:min-h-[560px]">
+                  {/* Status bar */}
+                  <div className="flex justify-between items-center text-white/60 text-xs mb-8">
+                    <span>9:41</span>
+                    <div className="flex gap-1">
+                      <div className="w-4 h-2 bg-white/60 rounded-sm" />
+                    </div>
+                  </div>
+
+                  {/* App content */}
+                  <div className="text-center">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] flex items-center justify-center">
+                      <span className="text-white font-bold text-xl">C</span>
+                    </div>
+                    <p className="text-white/60 text-sm mb-6">CHIPI Balance</p>
+                    <p className="text-white text-3xl font-bold mb-8">$4,285.50</p>
+
+                    {/* QR Code */}
+                    <div className="bg-white rounded-2xl p-4 mb-6 mx-auto w-fit">
+                      <QrCode size={100} className="text-slate-800" />
+                    </div>
+                    <p className="text-white/60 text-sm mb-6">Scan to pay</p>
+
+                    {/* Quick actions */}
+                    <div className="grid grid-cols-3 gap-4">
+                      {[
+                        { icon: "↓", label: "Deposit" },
+                        { icon: "↑", label: "Send" },
+                        { icon: "⇄", label: "Swap" },
+                      ].map((action, i) => (
+                        <div key={i} className="text-center">
+                          <div className="w-10 h-10 mx-auto mb-1 rounded-full bg-white/10 flex items-center justify-center text-white">
+                            {action.icon}
+                          </div>
+                          <span className="text-white/60 text-xs">{action.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
-              {/* Floating elements */}
+              {/* Floating badges */}
               <motion.div
-                className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3"
+                className="absolute -right-4 top-20 bg-white rounded-xl shadow-lg px-4 py-2 flex items-center gap-2"
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                  <Zap className="text-green-600" size={20} />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold">Instant</div>
-                  <div className="text-xs text-[var(--muted)]">Confirmation</div>
-                </div>
+                <Zap className="text-green-500" size={16} />
+                <span className="text-sm font-medium">Instant</span>
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3"
+                className="absolute -left-4 bottom-32 bg-white rounded-xl shadow-lg px-4 py-2 flex items-center gap-2"
                 animate={{ y: [5, -5, 5] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                  <Shield className="text-blue-600" size={20} />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold">Secure</div>
-                  <div className="text-xs text-[var(--muted)]">Encrypted</div>
-                </div>
+                <Shield className="text-blue-500" size={16} />
+                <span className="text-sm font-medium">Secure</span>
               </motion.div>
             </div>
           </motion.div>

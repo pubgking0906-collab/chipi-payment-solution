@@ -1,14 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Services", href: "#services" },
+  { name: "Features", href: "#features" },
   { name: "How It Works", href: "#how-it-works" },
-  { name: "Compliance", href: "#compliance" },
-  { name: "About", href: "#about" },
 ];
 
 export default function Navbar() {
@@ -28,46 +26,33 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-white/90 backdrop-blur-lg shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.a
-            href="#"
-            className="flex items-center gap-2"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] flex items-center justify-center">
-              <span className="text-white font-bold text-lg">C</span>
+          <a href="#" className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] flex items-center justify-center">
+              <span className="text-white font-bold text-sm">C</span>
             </div>
-            <span className="text-2xl font-bold gradient-text">CHIPI</span>
-          </motion.a>
+            <span className="text-xl font-bold">CHIPI</span>
+          </a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <motion.a
+              <a
                 key={link.name}
                 href={link.href}
-                className="text-[var(--foreground)] hover:text-[var(--primary)] font-medium transition-colors"
-                whileHover={{ y: -2 }}
+                className="text-[var(--muted)] hover:text-[var(--foreground)] text-sm font-medium transition-colors"
               >
                 {link.name}
-              </motion.a>
+              </a>
             ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <motion.button
-              className="btn-primary"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
+            <button className="btn-primary !py-2 !px-5 text-sm">
               Get Started
-            </motion.button>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -81,30 +66,27 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-[var(--border)]"
-          >
-            <div className="container-custom py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-[var(--foreground)] hover:text-[var(--primary)] font-medium py-2"
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <button className="btn-primary mt-4">Get Started</button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isMobileOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          className="md:hidden bg-white border-t"
+        >
+          <div className="container-custom py-4 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-[var(--foreground)] py-2"
+                onClick={() => setIsMobileOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+            <button className="btn-primary mt-2">Get Started</button>
+          </div>
+        </motion.div>
+      )}
     </motion.nav>
   );
 }
