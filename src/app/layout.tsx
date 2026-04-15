@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "CHIPI",
     images: [
       {
-        url: "http://chipipay.co/og-image.png",
+        url: "http://chipipay.co/og-preview.png",
         width: 1200,
         height: 630,
         alt: "CHIPI - Crypto Payment Solutions",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CHIPI | Pay with Fiat & Crypto. Instantly.",
     description: "CHIPI is a fintech platform, not a bank. Services via licensed partners.",
-    images: ["http://chipipay.co/og-image.png"],
+    images: ["http://chipipay.co/og-preview.png"],
   },
 };
 
