@@ -12,8 +12,8 @@ export default function Hero() {
         backgroundSize: '40px 40px'
       }} />
 
-      <div className="w-full max-w-[1400px] mx-auto px-8 md:px-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
           {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -25,7 +25,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4"
+              className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight mb-2"
             >
               Pay with Fiat & Crypto.
             </motion.h1>
@@ -96,7 +96,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex justify-center"
+            className="relative flex justify-end"
           >
             {/* Phone frame */}
             <div className="relative">
