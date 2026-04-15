@@ -96,7 +96,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex justify-center lg:justify-end lg:pr-4"
+            className="relative flex justify-center lg:justify-end lg:-mr-8"
           >
             {/* Phone frame */}
             <div className="relative">
