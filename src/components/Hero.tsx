@@ -168,7 +168,7 @@ function useAnimatedCounter(targetValue: number, duration: number = 2000, pauseD
 // Phone mockup component
 function PhoneMockup({ size }: { size: "desktop" | "mobile" }) {
   const isDesktop = size === "desktop";
-  const animatedBalance = useAnimatedCounter(4285.50, 2500, 4000);
+  const animatedBalance = useAnimatedCounter(4285.50, 4000, 4000);
   
   // Format number with commas and 2 decimal places
   const formattedBalance = animatedBalance.toLocaleString('en-US', {
