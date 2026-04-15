@@ -44,9 +44,11 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-xl text-[var(--muted)] mb-8 max-w-lg mx-auto lg:mx-0"
+                className="text-lg text-[var(--muted)] mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed"
               >
-                Scan. Pay. Done. QR-based crypto payments at approved merchants worldwide.
+                <span className="font-medium text-[var(--foreground)]">CHIPI is a fintech platform, not a bank.</span>
+                <br />
+                Services via licensed partners.
               </motion.p>
 
               <motion.div
