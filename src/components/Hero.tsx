@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { QrCode, Zap, Shield } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
   return (
@@ -120,9 +121,60 @@ export default function Hero() {
   );
 }
 
-// Phone mockup component to avoid repetition
+// Animated counter hook
+function useAnimatedCounter(targetValue: number, duration: number = 2000, pauseDuration: number = 3000) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let animationFrame: number;
+    let startTime: number;
+    let timeoutId: NodeJS.Timeout;
+
+    const animate = () => {
+      const runAnimation = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        setCount(targetValue * easeOutQuart);
+
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(runAnimation);
+        } else {
+          // Pause at target value, then restart
+          timeoutId = setTimeout(() => {
+            setCount(0);
+            startTime = 0;
+            animationFrame = requestAnimationFrame(runAnimation);
+          }, pauseDuration);
+        }
+      };
+
+      animationFrame = requestAnimationFrame(runAnimation);
+    };
+
+    animate();
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      clearTimeout(timeoutId);
+    };
+  }, [targetValue, duration, pauseDuration]);
+
+  return count;
+}
+
+// Phone mockup component
 function PhoneMockup({ size }: { size: "desktop" | "mobile" }) {
   const isDesktop = size === "desktop";
+  const animatedBalance = useAnimatedCounter(4285.50, 2500, 4000);
+  
+  // Format number with commas and 2 decimal places
+  const formattedBalance = animatedBalance.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
   
   return (
     <div className="relative">
@@ -147,7 +199,9 @@ function PhoneMockup({ size }: { size: "desktop" | "mobile" }) {
               <span className={`text-white font-bold ${isDesktop ? 'text-xl' : 'text-lg'}`}>C</span>
             </div>
             <p className="text-white/60 text-sm mb-6">CHIPI Balance</p>
-            <p className={`text-white font-bold mb-8 ${isDesktop ? 'text-3xl' : 'text-2xl'}`}>$4,285.50</p>
+            <p className={`text-white font-bold mb-8 ${isDesktop ? 'text-3xl' : 'text-2xl'} tabular-nums`}>
+              ${formattedBalance}
+            </p>
 
             {/* QR Code */}
             <div className="bg-white rounded-2xl p-4 mb-6 mx-auto w-fit">
