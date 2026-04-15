@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { QrCode, Zap, Shield, CheckCircle } from "lucide-react";
+import { QrCode, Zap, Shield } from "lucide-react";
 import { useRef } from "react";
 
 export default function Hero() {
@@ -80,27 +80,6 @@ export default function Hero() {
                 >
                   Learn More
                 </motion.button>
-              </motion.div>
-
-              {/* Trust indicators */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="flex flex-wrap items-center gap-4 lg:gap-8 mt-6 lg:mt-10 justify-center lg:justify-start text-sm lg:text-base text-[var(--muted)]"
-              >
-                <span className="flex items-center gap-2">
-                  <CheckCircle size={18} className="text-green-500" />
-                  Regulated
-                </span>
-                <span className="flex items-center gap-2">
-                  <CheckCircle size={18} className="text-green-500" />
-                  Licensed Partners
-                </span>
-                <span className="flex items-center gap-2">
-                  <CheckCircle size={18} className="text-green-500" />
-                  Instant
-                </span>
               </motion.div>
 
               {/* Scroll indicator - mobile only */}
