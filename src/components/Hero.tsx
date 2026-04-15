@@ -25,12 +25,18 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4"
             >
               Pay with Fiat & Crypto.
-              <br />
-              <span className="gradient-text">Instantly.</span>
             </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
+            >
+              <span className="gradient-text">Instantly.</span>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
