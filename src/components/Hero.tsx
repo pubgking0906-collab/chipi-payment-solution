@@ -25,7 +25,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4 whitespace-nowrap"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4"
             >
               Pay with Fiat & Crypto.
             </motion.h1>
