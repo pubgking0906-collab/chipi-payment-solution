@@ -25,7 +25,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight mb-2"
+              className="text-4xl md:text-5xl lg:text-[4rem] font-bold leading-tight mb-2"
             >
               Pay with Fiat & Crypto.
             </motion.h1>
@@ -33,7 +33,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
+              className="text-5xl md:text-6xl lg:text-[5rem] font-bold mb-6"
             >
               <span className="gradient-text">Instantly.</span>
             </motion.div>
@@ -42,7 +42,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-lg text-[var(--muted)] mb-8 max-w-md mx-auto lg:mx-0"
+              className="text-xl text-[var(--muted)] mb-8 max-w-lg mx-auto lg:mx-0"
             >
               Scan. Pay. Done. QR-based crypto payments at approved merchants worldwide.
             </motion.p>
@@ -74,18 +74,18 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="flex items-center gap-6 mt-10 justify-center lg:justify-start text-sm text-[var(--muted)]"
+              className="flex items-center gap-8 mt-10 justify-center lg:justify-start text-base text-[var(--muted)]"
             >
               <span className="flex items-center gap-2">
-                <CheckCircle size={16} className="text-green-500" />
+                <CheckCircle size={20} className="text-green-500" />
                 Regulated
               </span>
               <span className="flex items-center gap-2">
-                <CheckCircle size={16} className="text-green-500" />
+                <CheckCircle size={20} className="text-green-500" />
                 Licensed Partners
               </span>
               <span className="flex items-center gap-2">
-                <CheckCircle size={16} className="text-green-500" />
+                <CheckCircle size={20} className="text-green-500" />
                 Instant
               </span>
             </motion.div>
