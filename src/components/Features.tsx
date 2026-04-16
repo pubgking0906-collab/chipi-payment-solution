@@ -63,7 +63,7 @@ export default function Features() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {features.map((feature, i) => (
             <motion.div
               key={i}
