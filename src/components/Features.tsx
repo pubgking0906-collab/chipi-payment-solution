@@ -22,62 +22,22 @@ const features = [
   {
     icon: CreditCard,
     title: "IBAN Accounts",
-    description: "Personal & business accounts with dedicated IBAN for seamless banking",
-  },
-  {
-    icon: ArrowRightLeft,
-    title: "SEPA & SWIFT",
-    description: "International transfers to 200+ countries via SEPA and SWIFT networks",
-  },
-  {
-    icon: Wallet,
-    title: "Crypto Wallet",
-    description: "Self-custody wallet with full control over your private keys",
+    description: "Personal & business accounts with dedicated IBAN for seamless banking integration",
   },
   {
     icon: Banknote,
     title: "Crypto to Fiat",
-    description: "Instant conversion between crypto and traditional currencies",
-  },
-  {
-    icon: Building,
-    title: "Business Accounts",
-    description: "Dedicated accounts for companies, startups, and institutions",
-  },
-  {
-    icon: TrendingUp,
-    title: "Investment Products",
-    description: "Managed certificates with Swiss ISIN for professional investors",
-  },
-  {
-    icon: Users,
-    title: "HNW Services",
-    description: "Premium support with dedicated account manager for high-net-worth clients",
-  },
-  {
-    icon: Lock,
-    title: "Multi-Sig Security",
-    description: "Cold wallet storage and multi-signature protection for your assets",
-  },
-  {
-    icon: Shield,
-    title: "Fully Compliant",
-    description: "Swiss-regulated with full KYC/AML compliance framework",
-  },
-  {
-    icon: Globe,
-    title: "Global Access",
-    description: "Operate worldwide with support for 200+ countries",
+    description: "Instant conversion between crypto and traditional currencies with competitive rates",
   },
   {
     icon: PiggyBank,
     title: "Asset Management",
-    description: "Professional portfolio management for funds and family offices",
+    description: "Professional portfolio management and investment solutions for your digital and traditional assets",
   },
   {
-    icon: BadgeCheck,
-    title: "Licensed Partners",
-    description: "Fiat operations through regulated financial institutions",
+    icon: Globe,
+    title: "Global Access",
+    description: "Operate worldwide with multi-currency support and international payment networks",
   },
 ];
 
@@ -103,7 +63,7 @@ export default function Features() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {features.map((feature, i) => (
             <motion.div
               key={i}
